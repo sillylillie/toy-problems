@@ -22,3 +22,26 @@ Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13"
 Constraints:
 1 <= n <= 104
 */
+
+// input
+let n = 37;
+
+let a = Array(n);
+
+for (let i = 0; i < n; i++) {
+	// default value is the index (starting at 1) as a string
+	let index = i+1;
+	a[i] = String(index);
+	
+	// replace string if certain divisibility requirements are met
+	if (index % 15 == 0) {
+		a[i] = 'FizzBuzz';
+	} else if (index % 3 == 0) {
+		a[i] = 'Fizz';
+	} else if (index % 5 == 0) {
+		a[i] = 'Buzz';
+	}
+}
+
+// output
+console.log(a);
